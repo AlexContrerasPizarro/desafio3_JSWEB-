@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 3</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="nav-wrapper">
+                <img src="assets/imgs/logoblackAlex.png" class="brand-img" alt="">
+                <div class="nav-items">
+                    <img src="assets/imgs/smile.PNG" class="icon" alt="">
+                </div>
+            </div>
+        </nav>
+
+        <div class="main">
+            <div class="elementos">
+                <h1>Desafío 3 - Funciones</h1>
+                <h2>Parte 1</h2>
+                <p>Transforma esta declaración de función a una función de expresión. El ejercicio debe
+                    quedar en un archivo nombrado `1 funcion.js`</p>
+                <pre><code> 
+    function example(a, b, c){
+    return a+b+c
+    }
+                    </code></pre>
+                <h3>Solución</h3>
+                <pre><code> 
+    const example = function(a, b, c) {
+    console.log(a + b + c);
+    }   
+                        
+    example(3,2,1);
+                    </code></pre>
+                <br>
+                <img src="assets/imgs/Captura1.JPG" alt="">
+            </div>
+
+            <div class="elementos">
+                <h2>Parte 2</h2>
+                <p>Transforma las siguiente función a una arrow function de una línea. Este ejercicio
+                    debe quedar en un archivo llamado `2 arrow.js`</p>
+
+                <pre><code> 
+    suma = function(a, b){
+    return a + b
+    }
+                </code></pre>
+                <h3>Solución</h3>
+                <pre><code>
+    const suma = (a,b) => console.log(a + b);
+
+    suma(3,2);               
+                </code></pre>
+                <br>
+                <img src="assets/imgs/Captura2.JPG" alt="">
+            </div>
+
+            <div class="elementos">
+                <h2>Parte 3</h2>
+                <p>Se tiene como base el siguiente ejercicio que cambia el color de un elemento de
+                    HTML al hacerle click. El color debe ser verde por defecto, al hacer clic en el
+                    párrafo se debe pasar amarillo como color.</p>
+
+                <h3 style="margin-bottom:0 ;">Solución</h3>
+                <h6 style="margin-top:0 ;">(click en hello)</h6>
+
+                <div id="ele1"> hello</div>
+
+                <br><br>
+                <img src="assets/imgs/Captura3.JPG" alt="">
+            </div>
+            <div class="elementos">
+                <h2>Parte 4</h2>
+                <p>Crea 4 divs que tengan alto y ancho de 200px y de distintos colores de fondo
+                    usando el atributo style. <br>
+                    Script que guarde dentro de una variable global un color
+                    dependiendo de la letra del teclado presionada. <br>
+                    Dentro del script agrega el evento que al hacerle click a uno de los divs, este
+                    cambie de color al color seleccionado.a</p>
+                <li> Al presionar la letra a un color a tu elección. (AZUL)</li>
+                <li> Al presionar la letra s un segundo color a tu elección. (ROJO)</li>
+                <li>Al presionar la letra d un tercer color a tu elección. (VERDE)</li>
+                <h3>Solución</h3>
+                <pre><code>
+                    <div class="contenedor">
+                        <div class="box" id="box1"> </div>
+                        <div class="box" id="box2"> </div>
+                        <div class="box" id="box3"> </div>
+                        <div class="box" id="box4"> </div>
+                    </div>
+                        <style>
+                            .contenedor {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                            }
+                    
+                            .box {
+                                height: 200px;
+                                width: 200px;
+                                border: solid;
+                                border-color: grey;
+                                margin: 5px;
+                            }
+                        </style>
+                </code></pre>
+                <br>
+                <img src="assets/imgs/Captura4.JPG" alt="">
+
+            </div>
+        </div>
+    </div>
+
+    <style>
+        body {
+            background-color: #e8eaed;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: #fff;
+            border-bottom: 1px solid #dfdfdf;
+            display: flex;
+            justify-content: center;
+            padding: 5px 0;
+        }
+
+        .nav-wrapper {
+            width: 70%;
+            max-width: 1000px;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 80px;
+            border-radius: 5px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            font-family: Roboto Mono, monospace;
+            background-color: white;
+            width: 99%;
+        }
+
+        .main h1 {
+            text-align: center;
+        }
+
+        .elementos {
+            width: 90%;
+        }
+
+        code {
+            display: flex;
+            flex-direction: column;
+            background-color: #e8eaed;
+            width: 100%;
+            border-left: solid;
+            border-color: green;
+        }
+
+        pre {
+            display: block;
+            font-family: monospace;
+            white-space: pre;
+            margin: 1em 0px;
+        }
+    </style>
+    <script>
+        function color() {
+            document.getElementById("ele1").addEventListener("click", function (pintar) {
+                if (pintar.target.style.backgroundColor == "green") {
+                    pintar.target.style.backgroundColor = "yellow";
+                } else if (pintar.target.style.backgroundColor == "yellow") {
+                    pintar.target.style.backgroundColor = "green";
+                } else {
+                    pintar.target.style.backgroundColor = "green";
+                }
+            });
+        }
+
+        color();
+
+        const box1 = document.getElementById('box1')
+        const box2 = document.getElementById('box2')
+        const box3 = document.getElementById('box3')
+        const box4 = document.getElementById('box4')
+
+        var color = "";
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'a') {
+                color = "blue"
+            }
+            else if (event.key === 's') {
+                color = "red"
+            }
+            else if (event.key === 'd') {
+                color = "green"
+            }
+            else {
+                color = ""
+            }
+        }
+        )
+
+        function colorMod(elem) {
+            elem.style.backgroundColor = color
+        }
+
+        box1.addEventListener('click', function () {
+            colorMod(box1)
+        })
+
+        box2.addEventListener('click', function () {
+            colorMod(box2)
+        })
+
+        box3.addEventListener('click', function () {
+            colorMod(box3)
+        })
+
+        box4.addEventListener('click', function () {
+            colorMod(box4)
+        })
+
+    </script>
+</body>
+<br>
+</html>
